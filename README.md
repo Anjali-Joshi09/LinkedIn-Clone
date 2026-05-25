@@ -1,7 +1,6 @@
 # LinkedIn Clone — Full Stack Web Application
 
-A feature-rich LinkedIn-style professional networking platform built with **Core PHP 8**, **MySQL**, **Bootstrap 5**, and **Vanilla JavaScript**. No frameworks required.
-
+A full-stack professional networking platform inspired by LinkedIn — built from scratch with Core PHP 8, MySQL, Bootstrap 5, and Vanilla JavaScript. Zero frameworks, zero dependencies beyond PHPMailer.
 ---
 
 ## Table of Contents
