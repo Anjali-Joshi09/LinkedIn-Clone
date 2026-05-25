@@ -1,0 +1,28 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /Linkedin/public/
+
+# Serve static files directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect index.php?page=x&foo=bar to clean URL /x?foo=bar
+RewriteCond %{QUERY_STRING} ^page=([^&]+)&(.+)$
+RewriteRule ^index\.php$ %1?%2 [R=301,L,NE]
+
+# Redirect index.php?page=x to clean URL /x
+RewriteCond %{QUERY_STRING} ^page=([^&]+)$
+RewriteRule ^index\.php$ %1? [R=301,L,NE]
+
+# Internally route clean URL back to index.php
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?page=$1 [QSA,L]
+
+# ── HTTP Security Headers ────────────────────────────────────
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>

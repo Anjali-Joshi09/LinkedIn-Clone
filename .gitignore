@@ -1,0 +1,36 @@
+# ── Credentials & Environment ────────────────────────────────
+# NEVER commit real credentials to Git
+.env
+
+# ── Composer vendor directory ─────────────────────────────────
+# Run `composer install` on the server instead
+/vendor/
+
+# ── User uploaded files ───────────────────────────────────────
+# These are runtime files, not source code
+/public/uploads/avatars/*
+/public/uploads/covers/*
+/public/uploads/companies/*
+/public/uploads/posts/*
+/public/uploads/resumes/*
+
+# Keep the folders and their .htaccess in Git
+!/public/uploads/.htaccess
+!/public/uploads/avatars/.gitkeep
+!/public/uploads/covers/.gitkeep
+!/public/uploads/companies/.gitkeep
+!/public/uploads/posts/.gitkeep
+!/public/uploads/resumes/.gitkeep
+
+# ── OS & IDE files ────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+/logs/

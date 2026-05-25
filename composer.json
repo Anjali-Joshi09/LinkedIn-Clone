@@ -1,0 +1,9 @@
+{
+  "name": "linkedin/clone-core-php",
+  "description": "LinkedIn-style full stack web application using Core PHP, MySQL, Bootstrap 5, vanilla JavaScript, AJAX and PHPMailer.",
+  "type": "project",
+  "require": {
+    "php": ">=8.0",
+    "phpmailer/phpmailer": "^7.1"
+  }
+}
